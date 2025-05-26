@@ -1,0 +1,46 @@
+.Menu{
+--background:#B4EBE6;
+}
+.container-genere{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem;
+    --background:#E8F9FF;
+}
+.genere{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    gap: 0.5rem;
+    background:#E8F9FF
+}
+.aesthetic-button {
+  --background: #4D869C;
+  --background-hover: #3c6e80;
+  --background-activated: #355f71;
+  --color: white;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 8px rgba(77, 134, 156, 0.3);
+  width: 150px;
+
+  font-weight: bolder;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.aesthetic-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(77, 134, 156, 0.4);
+}
+
+.aesthetic-button:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 6px rgba(77, 134, 156, 0.2);
+}

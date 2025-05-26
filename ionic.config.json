@@ -1,0 +1,7 @@
+{
+  "name": "Peliculas",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}

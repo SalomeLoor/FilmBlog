@@ -1,0 +1,10 @@
+.toolbar{
+    display: flex;
+    padding:5px;
+    --background:#B4EBE6;
+    --border-radius: 10px;
+}
+.title2{
+    font-size: 1.5rem;
+    color: #081a38;
+}

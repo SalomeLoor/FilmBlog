@@ -1,0 +1,22 @@
+.ion-hearder{
+    --background:#B4EBE6;
+}
+.container-header{
+    padding:5px;
+    --background:#B4EBE6;
+    --border-radius: 10px;
+}
+.title{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #081a38;
+    padding: 15px;
+}
+.search{
+    --background: #E8F9FF;
+    --border-radius: 10px;
+    color: #081a38;
+}
+.menu-button{
+    color: #081a38;
+}

@@ -1,0 +1,11 @@
+.card-movie-content {
+  --background: #E8F9FF; /* o cualquier color que quieras */
+}
+.content-card{
+    background-color: #E8F9FF;
+    border-radius: 10px;
+}
+.content-card img{
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
