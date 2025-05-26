@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_URL, API_KEY, API_TOKEN } from "./config.js";
+import { API_URL, API_KEY, API_TOKEN } from "./config";
 
 export const getConnectionApi = axios.create({
   baseURL: API_URL,

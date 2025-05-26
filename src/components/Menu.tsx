@@ -20,10 +20,15 @@ const Menu: React.FC = () => {
 
   useEffect(() => {
     const getGenere = async () => {
-      const { data } = await getConnectionApi.get(
+     try{
+       const { data } = await getConnectionApi.get(
         `/genre/movie/list?language=en`
       );
       setGenere(data.genres);
+     }
+      catch (error) {
+        console.log(error);
+      }
     };
     getGenere();
   }, [setGenere]);

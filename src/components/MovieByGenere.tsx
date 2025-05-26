@@ -35,11 +35,16 @@ const MovieByGenere: React.FC = () => {
   console.log("actual page por Generos " + Actualpage);
 
   const getMoviesByGeneres = useCallback( async (page=1) => {
-    const { data } = await getConnectionApi.get(
+    try{
+      const { data } = await getConnectionApi.get(
       `/discover/movie?with_genres=${id}?page=${page}`
     );
     setMovies(anteriorPage=> page===1? data.results : [...anteriorPage, ...data.results]); //este estado se actualiza y obtiene las peliculas y las paginas
     setTotalPages(data.total_pages); //este estado se actualiza y obtiene el total de paginas
+    }
+    catch (error) {
+      console.error("Error fetching movies by genre:", error);
+    }
   }, [id]);
 
    const handleInfiniteScroll = async (event: CustomEvent<void>) => {

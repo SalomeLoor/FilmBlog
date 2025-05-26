@@ -31,13 +31,18 @@ const Home: React.FC<IMovie> = () => {
   //useCallback se usa para optimizar el rendimiento de la aplicacion cuando se traen muchos datos
   
     const  fetchSearchResults = useCallback(async (page = 1) => {
-    const url = searchText
+   try{
+     const url = searchText
       ? `/search/movie?query=${searchText}&page=${page}`
       : `/trending/movie/day?page=${page}`;
 
     const { data } = await getConnectionApi.get(url);
     setSearchResults(anteriorPage=> page===1? data.results : [...anteriorPage, ...data.results]); //este estado se actualiza y obtiene las peliculas y las paginas
     setTotalPages(data.total_pages); //este estado se actualiza y obtiene el total de paginas
+   }
+    catch (error) {
+      console.error("Error fetching search results:", error);
+    }
   }, [searchText]);
 
   useEffect(() => {
