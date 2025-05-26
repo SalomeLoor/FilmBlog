@@ -13,7 +13,7 @@ import React from "react";
 //css
 import "../Css/CardMovie.css";
 //imgs
-import NoneMovieImg from "/NoneMovieImg.jpg";
+import NoneMovieImg from "../assets/NoneMovieImg.jpg";
 //interfaces
 import { ICardMovieProps } from "../Interface/IMovie";
 

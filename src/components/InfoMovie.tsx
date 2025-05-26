@@ -19,8 +19,7 @@ import { IMovie, IParams } from "../Interface/IMovie";
 //conexion api
 import { getConnectionApi } from "../Connection/ConnectionApi";
 //imgs
-import NoneMovieImg from "/NoneMovieImg.jpg";
-
+import NoneMovieImg from "../assets/NoneMovieImg.jpg";
 import "../Css/InfoMovie.css";
 import ActorAndDirector from "./ActorAndDirector";
 

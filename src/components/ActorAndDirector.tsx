@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 //css
 import "../Css/ActorAndDirector.css";
 //imgs
-import notPhoto from "/notPhoto.jpg";
+import notPhoto from "../assets/notPhoto.jpg";
 // import required modules
 import { Pagination } from "swiper/modules";
 //interfaces

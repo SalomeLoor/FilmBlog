@@ -18,7 +18,7 @@ import { useParams } from "react-router";
 //css
 import "../Css/MovieByGenere.css"
 //imgs
-import NoneMovieImg from "/NoneMovieImg.jpg";
+import NoneMovieImg from "../assets/NoneMovieImg.jpg";
 //interfaces
 import { IParams } from "../Interface/IGenere";
 import { IMovie } from "../Interface/IMovie";
