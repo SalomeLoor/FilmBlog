@@ -63,6 +63,7 @@ const ActorAndDirector: React.FC<IActorAndDirectorProps> = ({
             <SwiperSlide key={actor.cast_id}>
               <div className="actor-slide">
           <img
+           referrerPolicy="no-referrer"
             src={
               actor.profile_path
                 ? `https://image.tmdb.org/t/p/w185${actor.profile_path}`
@@ -91,6 +92,7 @@ const ActorAndDirector: React.FC<IActorAndDirectorProps> = ({
           <SwiperSlide key={director.id}>
             <div className="actor-slide">
                 <img
+                 referrerPolicy="no-referrer"
                   src={
                     director.profile_path
                       ? `https://image.tmdb.org/t/p/w185${director.profile_path}`

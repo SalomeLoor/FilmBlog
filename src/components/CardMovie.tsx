@@ -45,6 +45,7 @@ const CardMovie: React.FC<ICardMovieProps> = ({ movies ,Actualpage,totalPages,fe
                   <IonCard className="no-margin-card ion-no-padding content-card">
                     <img
                       className="img-card"
+                       referrerPolicy="no-referrer"
                       alt="Silhouette of mountains"
                       src={
                         movieData.poster_path

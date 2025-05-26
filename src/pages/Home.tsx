@@ -74,9 +74,19 @@ const Home: React.FC<IMovie> = () => {
     ></IonSearchbar>
   </IonToolbar>
 </IonHeader>
-
+ {/*Esto evita que elcomponente card movie se renderice antes de que carguen bien las peliculas */}
       <IonContent >
-        <CardMovie movies={searchResults} Actualpage={Actualpage} totalPages={totalPages} fetchSearchResults={fetchSearchResults} setActualPage={setActualPage}/>
+        {searchResults.some((m) => m.poster_path) ? (
+    <CardMovie
+      movies={searchResults}
+      Actualpage={Actualpage}
+      totalPages={totalPages}
+      fetchSearchResults={fetchSearchResults}
+      setActualPage={setActualPage}
+    />
+  ) : (
+    <p>Cargando películas...</p>
+  )}
       </IonContent>
     </IonPage>
   );

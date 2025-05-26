@@ -85,10 +85,12 @@ const MovieByGenere: React.FC = () => {
               <IonCard className="no-margin-card" routerLink={`/infomovie/${movie.id}`} >
                 <img
                   alt="Silhouette of mountains"
+                   referrerPolicy="no-referrer"
                   src={
                     movie.poster_path
                       ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
                       : NoneMovieImg
+                       
                   } //verifica si existe la imagen, si no existe se coloca una por defecto
                 />
               </IonCard>

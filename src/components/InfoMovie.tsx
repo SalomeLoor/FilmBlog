@@ -57,6 +57,7 @@ const InfoMovie: React.FC = () => {
             <img
               className="img-movie"
               alt="Silhouette of mountains"
+               referrerPolicy="no-referrer"
               src={
                 movieInfo.poster_path
                   ? `https://image.tmdb.org/t/p/w500${movieInfo.poster_path}`
