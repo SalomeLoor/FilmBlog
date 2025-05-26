@@ -94,7 +94,7 @@ const ActorAndDirector: React.FC<IActorAndDirectorProps> = ({
                   src={
                     director.profile_path
                       ? `https://image.tmdb.org/t/p/w185${director.profile_path}`
-                      : "/notPhoto.jpg"
+                      : notPhoto
                   }
                   alt={director.name}
                 />
