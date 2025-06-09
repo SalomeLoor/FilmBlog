@@ -1,0 +1,17 @@
+.Container-user{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-CelesteAgua);
+    gap: 1rem;
+}
+.btnSumit {
+  width: 150px;
+  height: 50px;
+  font-size: 15px;
+  --background: var(--color-AzulMarino);
+  --border-radius: 10px;
+  color: var(--color-CelesteAgua);
+  text-transform: none;
+}

@@ -8,6 +8,6 @@ export interface IGenereProps {
 }
 
 export interface IParams{
-    id:string,
+    id:number,
     name:string,
 }

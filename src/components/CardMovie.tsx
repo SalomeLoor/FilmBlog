@@ -78,4 +78,5 @@ const CardMovie: React.FC<ICardMovieProps> = ({ movies ,Actualpage,totalPages,fe
   );
 };
 
-export default CardMovie;
+export default React.memo(CardMovie);// optimiza 
+

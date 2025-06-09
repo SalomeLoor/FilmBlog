@@ -1,3 +1,5 @@
+
+//funcion para filtrar los dupilicados por nombre
 export function getUniqueByName<T extends { name: string; known_for_department: string }>(
   list: T[] | null,
   department: string
@@ -11,3 +13,4 @@ export function getUniqueByName<T extends { name: string; known_for_department: 
     ).values()
   );
 }
+

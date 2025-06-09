@@ -4,6 +4,9 @@ http://ionicframework.com/docs/theming/ */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Federo&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Pacifico&family=Pompiere&family=Sofia&display=swap');
 :root {
   --color-backgraund: #9EBC8A;
+  --color-verdeMarino: #B4EBE6;
+  --color-CelesteAgua: #E8F9FF;
+  --color-AzulMarino: #081a38;
 }
 
 .pacifico-regular {
@@ -22,8 +25,6 @@ http://ionicframework.com/docs/theming/ */
   font-weight: 400;
   font-style: normal;
 }
-
-
 .no-margin-card {
   margin: 0 !important;
   border-radius: 0 !important;
@@ -36,12 +37,17 @@ http://ionicframework.com/docs/theming/ */
   object-fit: cover;
   border-radius: 8px;
 }
-
-
 .ion-no-padding {
   padding: 0 ;
   margin: 0 ;
 }
 .vote-count{
     font-size: 12px;
+}
+
+.tab{
+  --background: var( --color-verdeMarino);
+}
+.tabButton{
+  color: var(--color-AzulMarino);
 }

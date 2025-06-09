@@ -1,3 +1,6 @@
+.card-movie {
+    background: #eef7ff;
+  }
 .container-headerCard {
   background: #eef7ff;
 }
@@ -81,6 +84,12 @@
   font-size: 18px;
   color: #081a38;
   font-weight: bold;
+}
+.CommentsByUser{
+ border: 1px solid black;
+ border-radius: 5px;
+ padding: 10px 1rem;
+ color: #000000;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -214,3 +223,4 @@
     text-align: justify;
   }
 }
+

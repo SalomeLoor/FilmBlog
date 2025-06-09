@@ -1,3 +1,4 @@
+
 export interface IMovie {
   id: number;
   title: string;
@@ -42,6 +43,7 @@ export interface ICardMovieProps {
 //parametros de la url
 export interface IParams {
   id: string
+  name: string
 }
 //actor
 export interface IActor {
@@ -67,3 +69,23 @@ export interface IActorAndDirectorProps {
   movieInfoProp: number;
 }
 
+export interface IDataComments {
+  commet: string;
+  movie_id: number
+  user_id: number;
+  message: string;
+}
+export interface IDataCommentsView {
+  commentsData: {
+    id: number;
+    commet: string;
+    movie_id: number;
+    state: boolean;
+    user_id: number;
+    user: {
+      user: string;
+      email: string;
+    };
+  }[];
+  message: string;
+}

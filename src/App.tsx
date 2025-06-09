@@ -35,6 +35,9 @@ import "./theme/variables.css";
 import Menu from "./components/Menu";
 import MovieByGenere from "./components/MovieByGenere";
 import InfoMovie from "./components/InfoMovie";
+import Tabs from "./components/Tabs";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 
 setupIonicReact();
@@ -47,10 +50,20 @@ const App: React.FC = () => (
 
         {/* Contenido principal */}
         <IonRouterOutlet id="main-content">
-          <Route exact path="/home" component={Home} />
+          <Route path="/tab" component={Tabs}/>
+
+
           <Route exact path="/genero/:id/:name" component={MovieByGenere} />
           <Route exact path="/infomovie/:id" component={InfoMovie} />
-          <Redirect exact from="/" to="/home" />
+
+           <Route exact path="/register" component={Register}/>
+           <Route exact path="/login" component={Login} />
+
+          
+          <Route exact path="/">
+            <Redirect  to="/register" />
+          </Route>
+        
         </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
