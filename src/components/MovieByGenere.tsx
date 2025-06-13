@@ -20,11 +20,12 @@ import "../Css/MovieByGenere.css";
 //imgs
 import NoneMovieImg from "../assets/NoneMovieImg.jpg";
 //interfaces
-import { IParams } from "../Interface/IGenere";
 import { IMovie } from "../Interface/IMovie";
 //componentes
 import { getConnectionApi } from "../Connection/ConnectionApi";
- 
+
+
+
 const MovieByGenere: React.FC = () => {
   const [movies, setMovies] = useState<IMovie[]>([]);
   const { id, name } = useParams<IParams>(); //se obtiene el parametro pasado

@@ -2,7 +2,6 @@ import {
   IonBackButton,
   IonButtons,
   IonCard,
-  IonCardHeader,
   IonCol,
   IonContent,
   IonGrid,
@@ -32,7 +31,7 @@ const Premiere: React.FC = () => {
   const handlePremiere = useCallback(async (page = 1) => {
     try {
       const { data } = await getConnectionApi.get(
-        `/movie/upcoming?page=${page}`
+        `/movie/now_playing?page=${page}`
       );
       setPremiere((anteriorPage) =>
         page === 1 ? data.results : [...anteriorPage, ...data.results]

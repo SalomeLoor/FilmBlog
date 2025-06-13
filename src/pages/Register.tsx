@@ -2,18 +2,16 @@ import {
   IonButton,
   IonContent,
   IonIcon,
-  IonImg,
   IonInput,
   IonPage,
-  IonTitle,
   useIonRouter,
 } from "@ionic/react";
 import React, { useState } from "react";
 import { connectionBackend } from "../Connection/connectionBackend";
 import { useShowAlert, useShowLoading, useSowToast } from "../Functions/Hooks";
 import "../Css/Register.css";
-import iconFilm from "../assets/iconFilm.png";
 import { logoGoogle } from "ionicons/icons";
+import { IDataUser } from "../Interface/IUser";
 
 const Register: React.FC = () => {
   const [dataUser, setDataUser] = useState({
@@ -44,7 +42,7 @@ const Register: React.FC = () => {
     setLoading(true);
 
     try {
-      const { data } = await connectionBackend.post("/register", dataUser);
+      const { data } = await connectionBackend.post<IDataUser>("/register", dataUser);
       console.log("Datos enviados:", data);
       //aqui se usa el alert
       if (data.message) {
@@ -55,12 +53,15 @@ const Register: React.FC = () => {
 
         router.push("/tab/home", "root");
 
+        localStorage.setItem("token", data.token); // para guardar el token en el local storage
         localStorage.setItem(
           "user",
-          JSON.stringify({ id: data.dataUser.id, user: data.dataUser.user })
+          JSON.stringify({
+            id: data.users.id,
+            user: data.users.user,
+            email: data.users.email,
+          })
         );
-        localStorage.setItem("token", data.token); // para guardar el token en el local storage
-
         await dismiss(); // 👈 aseguramos que se cierre antes de navegar
         //aqui usar la funcion del toast
         await showToast();

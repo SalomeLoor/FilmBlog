@@ -33,13 +33,13 @@ const Menu: React.FC = () => {
     getGenere();
   }, [setGenere]);
 
-  
+   
 
   return (
     <IonMenu side="start" contentId="main-content" className="Menu" >
       <IonHeader >
         <IonToolbar className="Menu">
-          <IonTitle className="pacifico-regular title">Film Blog</IonTitle>
+          <IonTitle className="pacifico-regular title">Genres</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding container-genere">

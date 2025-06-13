@@ -42,8 +42,8 @@ export interface ICardMovieProps {
 }
 //parametros de la url
 export interface IParams {
-  id: string
-  name: string
+  id: string;
+  name: string;
 }
 //actor
 export interface IActor {
@@ -82,10 +82,21 @@ export interface IDataCommentsView {
     movie_id: number;
     state: boolean;
     user_id: number;
+    createdAt: string;
     user: {
       user: string;
       email: string;
     };
   }[];
   message: string;
+}
+
+export interface FormatDateTimeOptions {
+  weekday: "short" | "long" | "narrow";
+  day: "2-digit" | "numeric";
+  month: "short" | "long" | "narrow" | "numeric" | "2-digit";
+  year: "numeric" | "2-digit";
+  //hour: "2-digit" | "numeric";
+  //minute: "2-digit" | "numeric";
+  //econd: "2-digit" | "numeric";
 }

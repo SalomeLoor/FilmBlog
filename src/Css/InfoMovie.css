@@ -1,16 +1,11 @@
-.card-movie {
-    background: #eef7ff;
-  }
-.container-headerCard {
-  background: #eef7ff;
-}
+
 .container-title {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 5px;
   font-size: 25px;
-  color: #081a38;
+  color:var(--color-AzulMarino);
 }
 .container-subtitle {
   display: flex;
@@ -45,12 +40,11 @@
   display: flex;
   gap: 10px;
   flex-direction: column;
-  background: #eef7ff;
 }
 .container-info h2 {
   font-size: 18px;
   font-weight: bold;
-  color: #081a38;
+  color: var(--color-AzulMarino);
 }
 .container-info p {
   font-size: 12px;
@@ -70,26 +64,51 @@
   align-items: center;
   gap: 20px;
   font-size: 12px;
+  
 }
 .container-budget span {
   border: 1px solid #000000;
   padding: 9px;
   border-radius: 5px;
-  background: #eef7ff;
   font-family: verdana;
-  color: #081a38;
+  color: var(--color-AzulMarino);
+  background:var(--color-verdeMarino);
 }
 .h {
   margin: 3rem 1rem 0.5rem 1.5rem;
   font-size: 18px;
-  color: #081a38;
+  color: var(--color-AzulMarino);
   font-weight: bold;
+}
+.section-comments{
+ display: flex;
+ flex-direction: column;
+ gap: 15px;
 }
 .CommentsByUser{
  border: 1px solid black;
  border-radius: 5px;
  padding: 10px 1rem;
- color: #000000;
+ color: black;
+ background:var(--color-verdeMarino) ;
+ position: relative;
+}
+.input-comments{
+  --background: var(---color-verdeMarino);
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.icon-input{
+  color: var(--color-AzulMarino);
+  padding: 5px;
+}
+.fechaComment{
+ position: absolute;
+ right: 10px;
+ font-size: 14px;
+}
+.btnComment{
+ margin: 1rem 5rem ;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {

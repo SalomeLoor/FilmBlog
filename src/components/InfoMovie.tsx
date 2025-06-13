@@ -26,9 +26,10 @@ import { getConnectionApi } from "../Connection/ConnectionApi";
 import NoneMovieImg from "../assets/NoneMovieImg.jpg";
 import "../Css/InfoMovie.css";
 import ActorAndDirector from "./ActorAndDirector";
-import { add, closeCircle, mail, person, send } from "ionicons/icons";
+import { add, closeCircle, person, send } from "ionicons/icons";
 import { connectionBackend } from "../Connection/connectionBackend";
 import { useShowAlert } from "../Functions/Hooks";
+import { FormatDateTime } from "../Functions/functions";
 
 const InfoMovie: React.FC = () => {
   const { id } = useParams<IParams>();
@@ -89,12 +90,6 @@ const InfoMovie: React.FC = () => {
       );
       setDataComments(data);
       console.log("Comentarios Obtenidos", data);
-      if (data.message) {
-        await showAlert(
-          `Comments add successfully ✨, \n${data.message}`,
-          "Successfully"
-        );
-      }
     } catch (error: any) {
       console.log(error);
       await showAlert(error.message, "Error");
@@ -112,8 +107,7 @@ const InfoMovie: React.FC = () => {
       }
     };
     getInfoMovieById();
-    getdataComments();
-
+    getdataComments()
   }, [id]);
 
   return (
@@ -219,20 +213,20 @@ const InfoMovie: React.FC = () => {
                   )}
                 </a>
                 {/**SECCION PARA COMENTAR UNA PELI */}
-                <IonButton onClick={() => setOcultar(true)}>
-                  <IonIcon icon={add} />
-                  comment
+                <IonButton className='btnSumit btnComment ' onClick={() => setOcultar(true)}>
+                  Comment
                 </IonButton>
                 {ocultar && (
-                  <IonItem>
+                  <IonItem className="input-comments" > 
                     <IonInput
                       value={comments}
                       onIonInput={(e) => setComments(e.detail.value ?? "")}
                       type="text"
-                      placeholder="Comentar"
+                      placeholder="Add Comment"
                     />{" "}
-                    <IonIcon icon={send} onClick={handleComments} />{" "}
+                    <IonIcon className="icon-input" icon={send} onClick={handleComments} />{" "}
                     <IonIcon
+                      className="icon-input"
                       icon={closeCircle}
                       onClick={() => setOcultar(false)}
                     />
@@ -265,7 +259,7 @@ const InfoMovie: React.FC = () => {
           {Array.isArray(DataComments?.commentsData) && DataComments.commentsData.length > 0 ? (
             DataComments.commentsData.map((data, index) => (
               <div className="CommentsByUser" key={index}>
-                <IonIcon icon={person}/> {data.user.user} 
+                <IonIcon icon={person}/> {data.user.user} <span className="fechaComment">{FormatDateTime(data.createdAt)}</span>
                 <p>{data.commet}</p>
               </div>
             ))

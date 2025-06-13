@@ -58,7 +58,7 @@ const CardMovie: React.FC<ICardMovieProps> = ({ movies ,Actualpage,totalPages,fe
                 </IonRouterLink>
             </IonCol>
               ))}
-          </IonRow>
+          </IonRow> 
         </IonGrid>
       
       <IonInfiniteScroll

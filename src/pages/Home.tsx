@@ -2,7 +2,7 @@ import {
   IonButtons,
   IonContent,
   IonHeader,
-  IonIcon,
+  IonImg,
   IonMenuButton,
   IonPage,
   IonSearchbar,
@@ -20,11 +20,11 @@ import { useCallback, useEffect, useState } from "react";
 import { IMovie } from "../Interface/IMovie";
 //componentes
 import CardMovie from "../components/CardMovie";
+import iconFilm from "../assets/iconFilm.png"
 
 const Home: React.FC<IMovie> = () => {
   //const {token} = useAuth();
 
-  const [searchText, setSearchText] = useState("");
   const [searchResults, setSearchResults] = useState<IMovie[]>([]);
   const [Actualpage, setActualPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -38,11 +38,8 @@ const Home: React.FC<IMovie> = () => {
   const fetchSearchResults = useCallback(
     async (page = 1) => {
       try {
-        const url = searchText
-          ? `/search/movie?query=${searchText}&page=${page}`
-          : `/trending/movie/day?page=${page}`;
-
-        const { data } = await getConnectionApi.get(url);
+       
+       const { data } = await getConnectionApi.get( `/trending/movie/day?page=${page}`);
         setSearchResults((anteriorPage) =>
           page === 1 ? data.results : [...anteriorPage, ...data.results]
         ); //este estado se actualiza y obtiene las peliculas y las paginas
@@ -52,7 +49,7 @@ const Home: React.FC<IMovie> = () => {
         console.error("Error fetching search results:", error);
       }
     },
-    [searchText]
+    []
   );
 
   useEffect(() => {
@@ -80,19 +77,6 @@ const Home: React.FC<IMovie> = () => {
             Film Blog
           </IonTitle>
         </IonToolbar>
-
-        <IonToolbar className="container-header">
-          <IonSearchbar
-            className="pompiere-regular search"
-            animated={true}
-            debounce={1000}
-            showCancelButton="focus"
-            cancelButtonText="Cancelar"
-            value={searchText}
-            placeholder="Buscar Películas"
-            onIonChange={(event) => setSearchText(event.detail.value!)}
-          ></IonSearchbar>
-        </IonToolbar>
       </IonHeader>
 
       {/*Esto evita que el componente card movie se renderice antes de que carguen bien las peliculas */}
@@ -106,7 +90,7 @@ const Home: React.FC<IMovie> = () => {
             setActualPage={setActualPage}
           />
         ) : (
-          <p>Cargando películas...</p>
+          <p className="textinfo pompiere-regular">Cargando películas...</p>
         )}
       </IonContent>
     </IonPage>

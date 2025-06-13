@@ -41,7 +41,7 @@ const Login: React.FC = () => {
       const { data } = await connectionBackend.post<IUserLogin>(
         "/login",
         dataUser
-      );
+      ); 
       console.log("User Logueado", data);
       if (data.message) {
         await showAlert(
