@@ -28,12 +28,12 @@ const Login: React.FC = () => {
 
   const router = useIonRouter();
 
-  const handleChange = (e) => {
+  const handleChange = (e:any) => {
     const { name, value } = e.target;
     setDataUser((datosAnteriores) => ({ ...datosAnteriores, [name]: value }));
   };
 
-  const handleSubmitLogin = async (e) => {
+  const handleSubmitLogin = async (e:any) => {
     e.preventDefault();
     await showLoading();
     setLoading(true); //cambiar a true

@@ -20,7 +20,7 @@ import "../Css/MovieByGenere.css";
 //imgs
 import NoneMovieImg from "../assets/NoneMovieImg.jpg";
 //interfaces
-import { IMovie } from "../Interface/IMovie";
+import { IMovie, IParams } from "../Interface/IMovie";
 //componentes
 import { getConnectionApi } from "../Connection/ConnectionApi";
 

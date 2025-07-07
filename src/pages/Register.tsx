@@ -32,17 +32,21 @@ const Register: React.FC = () => {
 
   const router = useIonRouter();
 
-  const handleChange = (e) => {
+
+  const handleChange = (e: any) => {
     const { name, value } = e.target;
     setDataUser((datosAnteriores) => ({ ...datosAnteriores, [name]: value }));
   };
-  const handleSubmitRegister = async (e) => {
+  const handleSubmitRegister = async (e:any) => {
     e.preventDefault(); //evita que la pagina se recargue
     await showLoading(); // mostrar loading
     setLoading(true);
 
     try {
-      const { data } = await connectionBackend.post<IDataUser>("/register", dataUser);
+      const { data } = await connectionBackend.post<IDataUser>(
+        "/register",
+        dataUser
+      );
       console.log("Datos enviados:", data);
       //aqui se usa el alert
       if (data.message) {
