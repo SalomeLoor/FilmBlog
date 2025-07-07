@@ -1,5 +1,5 @@
 import axios from 'axios';
-const URL ='backendfilmblog-production.up.railway.app/api';
+const URL = 'https://backendfilmblog-production.up.railway.app/api';
 export const connectionBackend = axios.create({
     baseURL: URL,
     headers: {
